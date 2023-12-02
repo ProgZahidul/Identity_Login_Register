@@ -1,0 +1,35 @@
+﻿@model List<RoleModel>
+
+<h1>Role index</h1>
+
+
+
+
+
+<a asp-controller="Administrator" asp-action="Create">Create New</a>
+
+<hr />
+
+
+<table class="table table-responsive table-hover table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	@foreach (RoleModel role in Model)
+	{
+		<tr>
+			<td>@role.Id</td>
+			<td>@role.RoleName</td>
+			<td>
+
+				<a asp-controller="Administrator" asp-action="Edit" asp-route-id="@role.Id">Edit</a>
+
+
+			</td>
+		</tr>
+	}
+</table>
